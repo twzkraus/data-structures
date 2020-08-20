@@ -7,7 +7,7 @@ var Queue = function() {
 
 Queue.prototype.enqueue = function(value) {
   let newIndex = this.tailIndex + 1;
-  if(!this.headIndex) {
+  if (!this.headIndex) {
     this.headIndex = newIndex;
   }
   this.tailIndex = newIndex;
