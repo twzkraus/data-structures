@@ -1,6 +1,20 @@
 var Stack = function() {
-  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
-  // but try not not reference your old code in writing the new style.
+  this; // is an unnecessary test
+
 };
 
-
+Stack.prototype.push = function(value) { this[this.size() + 1] = value; };
+Stack.prototype.pop = function() {
+  let lastElement = this[this.size()];
+  delete this[this.size()];
+  return lastElement;
+};
+Stack.prototype.size = function() {
+  let count = 0;
+  for (let key in this) {
+    if (key !== 'pop' && key !== 'push' && key !== 'size') {
+      count++;
+    }
+  }
+  return count;
+};
