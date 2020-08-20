@@ -29,7 +29,6 @@ var Queue = function() {
     return firstElement;
   };
 
-
   someInstance.size = function() {
     let count = 0;
     for (let key in someInstance) {
