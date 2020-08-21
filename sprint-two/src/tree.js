@@ -32,5 +32,10 @@ treeMethods.contains = function(target) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ //treeMethods.addChild:
+ //Since this function only adds new children to the end of the children array this function is constant time. O(1).
+
+ //treeMethods.contains:
+//Since we have to compare every child to the target this function is linear time. O(n)
 
  */
