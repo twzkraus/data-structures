@@ -21,12 +21,13 @@ HashTable.prototype.retrieve = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
   var storageArray = this._storage.get(index);
   var result;
-  _.each(storageArray, function(item) {
+  for (let i = 0; i < storageArray.length; i++) {
+    let item = storageArray[i];
     if (item[0] === k) {
       result = item[1];
+      return result;
     }
-  });
-  return result;
+  }
 };
 
 HashTable.prototype.remove = function(k) {
