@@ -64,12 +64,12 @@ BinarySearchTree.prototype.depthFirstLog = function(func) {
 /*
  * Complexity: What is the time complexity of the above functions?
 insert
-Since this function's worst case senario mean's that it has to visit every child tree, this function has a linear time. O(n).
+Since this function's worst case scenario mean's that it has to visit every child tree, this function has a linear time. O(n).
 
 contains
-
+Since this function's worst case scenario mean's that it has to visit every child tree, this function has a linear time. O(n).
 
 depthFirstLog
-
+Since this function necessarily has to visit every child tree, this function has a linear time. O(n).
 
  */
