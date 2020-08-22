@@ -32,8 +32,24 @@ var LinkedList = function() {
     return false;
   };
 
+  list.removeTail = function() {
+    let oldTail = list.tail;
+    let current = list.head;
+    while (current.next !== list.tail) {
+      current = current.next;
+    }
+    list.tail = current;
+    current.next = null;
+    return oldTail;
+  };
+
   return list;
 };
+
+
+
+
+
 
 var Node = function(value) {
   var node = {};
