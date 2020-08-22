@@ -8,30 +8,25 @@ var HashTable = function() {
 HashTable.prototype.insert = function(k, v) {
   var index = getIndexBelowMaxForKey(k, this._limit);
   let tuple = [k, v];
-  // if our storage spot is empty,
-  if (!this._storage.get(index).length) {
-    // set the storage spot equal to our tuple
+  if (!this._storage.get(index)) {
     this._storage.set(index, [tuple]);
   } else {
-  // otherwise,
-    // get the current storage spot
     var currentStorage = this._storage.get(index);
-    // push the new tuple into the storage spot value
     currentStorage.push(tuple);
-    // set the storage spot equal to an array with the new tuple concatenated to the end of previous tuples
     this._storage.set(index, currentStorage);
   }
 };
-// previously:
-// storageArray[index]: ['turner', 'kraus']
-// now:
-// storageArray[index]: [['turner', 'kraus']]
-// or: [['turner', 'kraus'], ['scott', 'mounce']]
-
 
 HashTable.prototype.retrieve = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
-  return this._storage.get(index)[1];
+  var storageArray = this._storage.get(index);
+  var result;
+  _.each(storageArray, function(item) {
+    if (item[0] === k) {
+      result = item[1];
+    }
+  });
+  return result;
 };
 
 HashTable.prototype.remove = function(k) {
@@ -44,6 +39,12 @@ HashTable.prototype.remove = function(k) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ insert
+  Since this function does not use any iteration and adds arrays to specific index's, this function is constant time, O(1).
+ retrieve
+  Since this function does iterate but the iteration is expected to be so minimal, this function is constant time, O(1).
+ remove
+  Since this function does not use any iteration and resets the array at a particular index, this function is constant time, O(1).
  */
 
 
