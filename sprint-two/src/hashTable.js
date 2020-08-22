@@ -12,7 +12,16 @@ HashTable.prototype.insert = function(k, v) {
     this._storage.set(index, [tuple]);
   } else {
     var currentStorage = this._storage.get(index);
-    currentStorage.push(tuple);
+    let keyExists = false;
+    _.each(currentStorage, function(thisTuple, i) {
+      if (thisTuple[0] === k) {
+        keyExists = true;
+        currentStorage[i] = tuple;
+      }
+    });
+    if (!keyExists) {
+      currentStorage.push(tuple);
+    }
     this._storage.set(index, currentStorage);
   }
 };
