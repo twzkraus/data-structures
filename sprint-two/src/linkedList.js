@@ -20,8 +20,8 @@ var LinkedList = function() {
     return oldHead.value;
   };
 
-  list.contains = function(target, segment=list.head) {
-    if(segment === null) {
+  list.contains = function(target, segment = list.head) {
+    if (segment === null) {
       return false;
     }
     if (target === segment.value) {
