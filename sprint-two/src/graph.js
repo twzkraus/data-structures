@@ -89,7 +89,6 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
 
 Graph.prototype.addMultipleEdges = function(fromNode) {
   let that = this;
-
   _.each(arguments, function(arg) {
     that.addEdge(fromNode, arg);
   });
