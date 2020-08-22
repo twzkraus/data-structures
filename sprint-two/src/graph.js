@@ -107,10 +107,16 @@ Graph.prototype.forEachNode = function(cb) {
  Since removeNode iterates over all of the graphBlocks, it is at least O(n). It also runs removeEdge for each neighbor relationship, and removeEdge is O(n). Therefore, removeNode is O(n^?)
 
  hasEdge
- addEdge
- removeEdge
- forEachNode
+ Since hasEdge iterates over all of the graphBlocks, it is linear time, O(n).
 
+ addEdge
+ Since addEdge iterates over all of the graphBlocks, it is linear time, O(n).
+
+ removeEdge
+ Since removeEdge iterates over all of the graphBlocks, it is linear time, O(n).
+
+ forEachNode
+ Since forEachNode iterates over all of the graphBlocks, it is linear time, O(n).
 
  */
 
