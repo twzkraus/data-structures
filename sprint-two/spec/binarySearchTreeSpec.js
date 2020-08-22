@@ -37,4 +37,10 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+
+  it('should insert values that are only numbers', function() {
+    expect(binarySearchTree.insert.bind(binarySearchTree, 'string')).to.throw();
+    expect(binarySearchTree.insert.bind(binarySearchTree, null)).to.throw();
+    expect(binarySearchTree.insert.bind(binarySearchTree, true)).to.throw();
+  });
 });

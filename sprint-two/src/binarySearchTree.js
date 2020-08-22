@@ -8,6 +8,9 @@ var BinarySearchTree = function(value) {
 BinarySearchTree.prototype.insert = function(value) {
   var newTree = BinarySearchTree(value);
   //if input value is less than this
+  if (typeof value !== 'number') {
+    throw new Error('input must be a number');
+  }
   if (newTree.value < this.value) {
     // if this.left already has a value
     if (this.left) {
