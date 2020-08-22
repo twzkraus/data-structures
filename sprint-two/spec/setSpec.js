@@ -24,4 +24,13 @@ describe('set', function() {
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
 
+  it('should return true if all items in the list are present in the set', function() {
+    var setCheck = ['Susan Sarandon', 'Danny Glover'];
+    set.add('Susan Sarandon');
+    set.add('Danny Glover');
+    expect(set.containsAll(setCheck)).to.equal(true);
+    setCheck.push('Turner Kraus');
+    expect(set.containsAll(setCheck)).to.equal(false);
+  });
+
 });

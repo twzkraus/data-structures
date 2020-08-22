@@ -23,6 +23,21 @@ setPrototype.remove = function(item) {
   delete this._storage[item];
 };
 
+setPrototype.containsAll = function() {
+  let allInList = true;
+  let that = this;
+  console.log(arguments[0]);
+  _.each(arguments[0], function(arg) {
+    // console.log(arg);
+    // console.log('contained in list?: ' + that.contains(arg));
+    if (!that.contains(arg)) {
+      allInList = false;
+    }
+  });
+  return allInList;
+};
+
+
 /*
  * Complexity: What is the time complexity of the above functions?
  .add
