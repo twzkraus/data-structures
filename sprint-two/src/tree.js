@@ -28,6 +28,17 @@ treeMethods.contains = function(target) {
   }
   return false;
 };
+// tree
+// tree.children = [5, 6]
+treeMethods.removeChild = function(value) {
+  for (let i = 0; i < this.children.length; i++) {
+    if (this.children[i].value === value) {
+      this.children.splice(i, 1);
+    }
+  }
+};
+
+
 
 
 /*
